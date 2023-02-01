@@ -1,6 +1,7 @@
 package net.HoFoxy.hofoxymod;
 
 import com.mojang.logging.LogUtils;
+import net.HoFoxy.hofoxymod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,6 +18,8 @@ public class HoFoxymod {
     private static final Logger LOGGER = LogUtils.getLogger();
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
